@@ -1,103 +1,98 @@
-import Image from "next/image";
+import MapWrapper from '../components/MapWrapper';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="bg-white text-gray-800 font-sans">
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
+      {/* Hero Section */}
+      <section className="bg-blue-50 py-20 text-center px-4">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4">
+          Discover the Freedom of Air Taxi Travel
+        </h1>
+        <p className="text-xl md:text-2xl mb-8">
+          Skip the drive, the lines, and the stress. Our modern air taxi service gets you
+          closer to your destination—fast, safe, and on your schedule.
+        </p>
+        <div className="flex justify-center gap-4">
+          <a href="#book" className="bg-blue-600 text-white px-6 py-3 rounded-xl shadow hover:bg-blue-700">
+            Book a Flight
           </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
+          <a href="#how-it-works" className="border border-blue-600 text-blue-600 px-6 py-3 rounded-xl hover:bg-blue-100">
+            How It Works
           </a>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
+      </section>
+
+      {/* What is Air Taxi */}
+      <section className="py-16 px-6 max-w-5xl mx-auto" id="how-it-works">
+        <h2 className="text-3xl font-semibold mb-6">What Is Air Taxi?</h2>
+        <p className="text-lg leading-relaxed mb-4">
+          We’ll take you where you want to go—quickly, conveniently, and with more flexibility than ever before.
+          Our fleet of turbine-powered aircraft departs from smaller airports, so you can skip the traffic, crowds, and delays.
+        </p>
+        <p className="text-lg leading-relaxed">
+          Arrive. Fly. Return when you&apos;re ready. Your air taxi is waiting.
+        </p>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="bg-gray-50 py-16 px-6" id="benefits">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-3xl font-semibold mb-6">Why Choose Air Taxi?</h2>
+          <ul className="grid md:grid-cols-2 gap-6 text-lg">
+            <li>✈️ Leave from airports near you&mdash;Oshawa, Billy Bishop, or Pearson</li>
+            <li>🛬 Fly closer to your destination—skip the hubs and save time</li>
+            <li>⏱️ No lines, no waiting—arrive and take off within minutes</li>
+            <li>💺 Comfortable, modern aircraft for short-haul efficiency</li>
+            <li>🧭 Flexible scheduling—fly when it works for you</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Where We Fly */}
+      <section className="py-16 px-6 max-w-6xl mx-auto" id="map">
+        <h2 className="text-3xl font-semibold mb-6 text-center">Where We Fly</h2>
+        <div className="w-full h-[500px] rounded-xl shadow-lg overflow-hidden">
+          <MapWrapper />
+        </div>
+      </section>
+
+      {/* Destinations */}
+      <section className="py-16 px-6 max-w-5xl mx-auto" id="destinations">
+        <h2 className="text-3xl font-semibold mb-6">Where You Can Go</h2>
+        <p className="text-lg mb-4">
+          Toronto → Ottawa in 1 hour. Kingston, Windsor, Sudbury, and more are just a hop away.
+        </p>
+        <p className="text-lg">
+          More routes added regularly. Custom destinations available on request.
+        </p>
+      </section>
+
+      {/* Pricing */}
+      <section className="bg-blue-50 py-16 px-6" id="pricing">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-3xl font-semibold mb-4">Transparent Pricing</h2>
+          <p className="text-xl mb-2">💸 Typical cost: <strong>$750 per person</strong></p>
+          <p className="text-lg mb-2">(based on 4 passengers on a 1-hour flight)</p>
+          <p className="text-lg">Half the price of a private jet—with more flexibility.</p>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-20 text-center px-6" id="book">
+        <h2 className="text-4xl font-bold mb-6">Your Air Taxi Is Ready</h2>
+        <p className="text-xl mb-8">
+          Whether for business or leisure, short-haul air travel has never been this convenient.
+        </p>
+        <a href="#contact" className="bg-blue-600 text-white px-8 py-4 rounded-xl text-lg shadow hover:bg-blue-700">
+          Request a Flight
         </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      <footer className="text-center text-sm text-gray-500 py-10">
+        &copy; 2025 Air Taxi Company. All rights reserved.
       </footer>
-    </div>
+
+    </main>
   );
 }
